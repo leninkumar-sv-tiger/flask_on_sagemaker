@@ -1,8 +1,20 @@
-def predict():
+# -*- coding: utf-8 -*-
+
+import calendar
+from datetime import datetime
+from collections import namedtuple
+import re
+import sys
+import time
+import json
+
+import numpy as np
+import pandas as pd
+
+        
+def run_dataframe(data):
     print("------------------------ In Predict Function ------------------------")
-    return pd.DataFrame(
-                    [["a", "b"], ["c", "d"]],
-                    index=["row 1", "row 2"],
-                    columns=["col 1", "col 2"],
-                )
-    
+    df = pd.DataFrame(json.loads(data[0]["body"].decode("utf-8")))
+    df["Source"] = "From Model 2"
+    return df
+
