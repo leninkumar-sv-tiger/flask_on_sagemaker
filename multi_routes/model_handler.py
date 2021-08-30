@@ -81,8 +81,7 @@ class ModelHandler(object):
         
 #         print("~~~~~~~~~~~~~~~~~~ Postprocess ~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 #         return self.postprocess(model_out)
-        print("lllllllllllllllllllllllllllllllllllllllllllllllllllllll", type(data), data)
-        return [self.mod.run_dataframe(data).to_json()]
+        return self.mod.run_dataframe(data).to_json()
 
 
 _service = ModelHandler()
