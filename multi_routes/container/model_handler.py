@@ -8,7 +8,6 @@ import os
 import re
 from collections import namedtuple
 
-import mxnet as mx
 import numpy as np
 
 
@@ -19,6 +18,7 @@ class ModelHandler(object):
 
     def __init__(self):
         self.initialized = False
+        print("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
         
 
     def get_model_files_prefix(self, model_dir):
@@ -44,39 +44,13 @@ class ModelHandler(object):
         return checkpoint_prefix
 
     
-#     def preprocess(self, request):
-#         """
-#         Transform raw input into model input data.
-#         :param request: list of raw requests
-#         :return: list of preprocessed model input data
-#         """
-#         # Take the input data and pre-process it make it inference ready
-
-#         data_list = []
-#         for idx, data in enumerate(request):
-#             # Read the bytearray of the image from the input
-#             body = data.get("body")
-#             data_list.append(body)
-
-#         return data_list
-    
-    
-#     def postprocess(self, inference_output):
-#         """
-#         Return predict result in as list.
-#         :param inference_output: list of inference output
-#         :return: list of predict results
-#         """
-#         # Take output from network and post-process to desired format
-#         return inference_output.to_json()
-    
-    
     def initialize(self, context):
         """
         Initialize model. This will be called during model loading time
         :param context: Initial context contains model server system properties.
         :return:
         """
+        print("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd")
         self.initialized = True
         properties = context.system_properties
         # Contains the url parameter passed to the load request
@@ -107,7 +81,7 @@ class ModelHandler(object):
         
 #         print("~~~~~~~~~~~~~~~~~~ Postprocess ~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 #         return self.postprocess(model_out)
-        return self.mod.run_dataframe()
+        return self.mod.run_dataframe(data)
 
 
 _service = ModelHandler()

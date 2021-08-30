@@ -22,7 +22,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 RUN pip3 --no-cache-dir install awscli \
                                 multi-model-server \
                                 sagemaker-inference \
-                                retrying
+                                retrying \
+                                pandas
 
 # Copy entrypoint script to the image
 COPY dockerd-entrypoint.py /usr/local/bin/dockerd-entrypoint.py
@@ -33,6 +34,7 @@ RUN mkdir -p /home/model-server/
 # Copy the default custom service file to handle incoming data and inference requests
 COPY model_handler.py /home/model-server/model_handler.py
 
+RUN echo s
 RUN ls /home/model-server/
 
 # Define an entrypoint script for the docker image

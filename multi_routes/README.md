@@ -1,9 +1,7 @@
 s3://tigermle-explorations/lenin/flask_on_sagemaker/multi_model/
 
 
-cd routes && tar zcf model.tar.gz model.py
-
-aws s3 cp $PWD/routes/model.tar.gz s3://tigermle-explorations/lenin/flask_on_sagemaker/multi_model/model.tar.gz
+cd routes && tar zcf model.tar.gz model.py && aws s3 cp $PWD/model.tar.gz s3://tigermle-explorations/lenin/flask_on_sagemaker/multi_model/model.tar.gz
 
 
 ---------------------------------

@@ -21,7 +21,7 @@ else:
     long_type = long
 
         
-def run_dataframe():
+def run_dataframe(data):
     print("------------------------ In Predict Function ------------------------")
     return pd.DataFrame(
                     [["a", "b"], ["x", "v"]],
