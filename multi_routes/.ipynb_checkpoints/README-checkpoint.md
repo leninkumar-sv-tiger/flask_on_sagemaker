@@ -11,6 +11,8 @@ cd routes && tar zcf model_3.tar.gz model_3.py && aws s3 cp $PWD/model_3.tar.gz 
 
 tar zcf model_4.tar.gz model_4.py && aws s3 cp $PWD/model_4.tar.gz s3://tigermle-explorations/lenin/flask_on_sagemaker/multi_model/model_4.tar.gz
 
+tar zcf covid.tar.gz covid.py && aws s3 cp $PWD/covid.tar.gz s3://tigermle-explorations/lenin/flask_on_sagemaker/multi_model/covid.tar.gz
+
 
 ---------------------------------
 

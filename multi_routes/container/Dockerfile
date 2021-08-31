@@ -23,7 +23,8 @@ RUN pip3 --no-cache-dir install awscli \
                                 multi-model-server \
                                 sagemaker-inference \
                                 retrying \
-                                pandas
+                                pandas \
+                                requests
 
 # Copy entrypoint script to the image
 COPY dockerd-entrypoint.py /usr/local/bin/dockerd-entrypoint.py
